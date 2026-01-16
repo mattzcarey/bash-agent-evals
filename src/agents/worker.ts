@@ -27,6 +27,10 @@ async function run() {
       const { runEmbeddingAgent } = await import('./embedding-agent.js');
       runAgent = runEmbeddingAgent;
       break;
+    case 'codemode':
+      const { runCodemodeAgent } = await import('./codemode-agent.js');
+      runAgent = runCodemodeAgent;
+      break;
     default:
       throw new Error(`Unknown agent type: ${agentType}`);
   }
